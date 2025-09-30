@@ -1,0 +1,15 @@
+[package]
+name = "Decentralized_Identity_for_Students"
+version = "1.0.0"
+authors = []
+
+[addresses]
+MyModule = "0x0d76dc3715a126a103d3bd6367362196c4d07e89465c82305c024b4afc4f2e2d"
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
