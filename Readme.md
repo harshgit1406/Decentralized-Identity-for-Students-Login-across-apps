@@ -1,168 +1,306 @@
 <<<<<<< HEAD
 # Decentralized Identity for Students – Login across apps
 
-## Project Description
 
-The Decentralized Identity for Students project is a blockchain-based smart contract solution built on the Aptos network that enables students to create and manage a unified digital identity. This identity can be used to authenticate and access multiple educational applications and platforms without the need for separate registration processes on each platform.
+A blockchain-based decentralized identity system built on the Aptos blockchain that allows students to create a single identity profile and use it to login across multiple educational applications seamlessly.
 
-The smart contract provides a secure, decentralized way for students to store their academic credentials and identity information on-chain, while maintaining privacy and control over their personal data. Educational apps and platforms can verify student authenticity through this decentralized system, creating a seamless login experience across the entire educational ecosystem.
+## 📋 Description
 
-## Project Vision
+This DApp (Decentralized Application) provides students with a self-sovereign identity solution where they control their own credentials. Instead of creating separate accounts for each educational platform, students can create one profile on the blockchain and verify themselves for any application in the educational ecosystem.
 
-Our vision is to revolutionize the way students interact with educational technology by creating a unified, secure, and student-controlled identity management system. We aim to eliminate the friction of multiple registrations, reduce identity fraud in educational settings, and empower students with complete ownership of their academic identity data.
+### Key Features
 
-By leveraging blockchain technology, we envision a future where students can seamlessly access any educational platform, carry their verified credentials across institutions, and maintain a permanent, tamper-proof record of their academic journey that follows them throughout their educational career.
+- **🔐 Single Sign-On**: One identity across multiple educational apps
+- **⛓️ Blockchain-Based**: Secure, immutable identity storage on Aptos
+- **👤 Self-Sovereign**: Students control their own data
+- **✅ App Verification**: Easily verify identity for new educational platforms
+- **🔒 Privacy-Focused**: Only you control your identity information
 
-## Key Features
+### Use Cases
 
-### 🔐 **Decentralized Identity Creation**
-- Students can create a unique on-chain identity profile with essential information
-- Secure storage of student ID, name, email, and institutional affiliation
-- Self-sovereign identity model where students own and control their data
+- Access Learning Management Systems (Canvas, Blackboard, Moodle)
+- Login to online course platforms (Coursera, Udemy, Khan Academy)
+- Verify student status for educational discounts
+- Single identity across university services
+- Portable credentials that follow you throughout your education journey
 
-### 🎓 **Cross-Platform Verification**
-- Single identity can be verified across multiple educational applications
-- Streamlined app onboarding without repetitive registration processes
-- Maintains a record of all verified applications for transparency
+## 🛠️ Technology Stack
 
-### 🛡️ **Security & Privacy**
-- Blockchain-based immutable identity records
-- Cryptographic verification prevents identity tampering
-- Students maintain full control over their identity data
+- **Frontend**: React + Vite
+- **Styling**: Ant Design (antd)
+- **Blockchain**: Aptos Network (Devnet)
+- **Smart Contract**: Move Language
+- **Wallet**: Petra Wallet Integration
+- **SDK**: Aptos TypeScript SDK
 
-### ✅ **Institution Integration**
-- Links student identity to their educational institution
-- Enables institution-level verification and authentication
-- Supports academic credential validation
+## 📁 Project Structure
 
-### 📱 **Multi-App Ecosystem**
-- Designed for integration with various educational platforms
-- Scalable verification system for unlimited applications
-- Reduces development overhead for educational app creators
+```
+Decentralized-Identity-for-Students/
+├── sources/
+│   └── Decentralized_Identity_for_Students.move
+├── Move.toml
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CreateProfile.jsx
+│   │   │   ├── VerifyApp.jsx
+│   │   │   └── ViewProfile.jsx
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   └── vite.config.js
+└── README.md
+```
 
-## Future Scope
+## 🚀 Prerequisites
 
-### 🎯 **Enhanced Credential Management**
-- Integration with academic transcript systems
-- Support for digital diplomas and certificates
-- Verification of completed courses and achievements
-- Grade point average (GPA) and academic standing tracking
+Before you begin, ensure you have the following installed:
 
-### 🌐 **Cross-Institution Portability**
-- Transfer credits and credentials between institutions
-- Support for international student mobility
-- Recognition of online courses and MOOCs
-- Academic portfolio management across multiple institutions
+- **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
+- **npm** or **yarn**
+- **Aptos CLI** - [Installation Guide](https://aptos.dev/cli-tools/aptos-cli-tool/install-aptos-cli)
+- **Petra Wallet** (Browser Extension) - [Download](https://petra.app/)
 
-### 🤝 **Industry Integration**
-- Connection with employer verification systems
-- Integration with professional networking platforms
-- Support for internship and job application processes
-- Skills and competency verification for career development
+## 📦 Installation & Setup
 
-### 🔒 **Advanced Privacy Features**
-- Zero-knowledge proof implementations for selective disclosure
-- Granular permission controls for data sharing
-- Anonymous verification options for sensitive applications
-- GDPR and privacy regulation compliance tools
+### Step 1: Clone the Repository
 
-### 📊 **Analytics & Insights**
-- Academic performance analytics across platforms
-- Learning pathway recommendations
-- Career guidance based on academic history
-- Institutional reporting and student success metrics
+```bash
+git clone <your-repo-url>
+cd Decentralized-Identity-for-Students
+```
 
-### 🚀 **Technical Enhancements**
-- Mobile wallet integration for easier access
-- Biometric authentication options
-- Multi-signature support for institutional endorsements
-- Integration with existing identity providers (OAuth, SAML)
-- Support for NFT-based achievement badges and certificates
+### Step 2: Deploy Smart Contract
+
+1. **Initialize Aptos Account** (if you haven't already):
+```bash
+aptos init
+```
+Select `devnet` when prompted for network.
+
+2. **Compile the Move Module**:
+```bash
+aptos move compile
+```
+
+3. **Deploy to Devnet**:
+```bash
+aptos move publish
+```
+
+4. **Copy the Module Address**: After deployment, copy your module address. It will look like:
+```
+0x0d76dc3715a126a103d3bd6367362196c4d07e89465c82305c024b4afc4f2e2d
+```
+
+5. **Update Frontend Configuration**: Open these files and replace `MODULE_ADDRESS` with your deployed address:
+   - `frontend/src/components/CreateProfile.jsx`
+   - `frontend/src/components/VerifyApp.jsx`
+   - `frontend/src/components/ViewProfile.jsx`
+
+### Step 3: Install Frontend Dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+### Step 4: Run the Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## 🎮 How to Use
+
+### 1. Connect Wallet
+- Click on "Connect Wallet" button in the top-right corner
+- Select Petra Wallet
+- Approve the connection
+- Make sure you're on **Aptos Devnet**
+
+### 2. Get Test APT (if needed)
+- Visit [Aptos Faucet](https://aptoslabs.com/testnet-faucet)
+- Enter your wallet address
+- Request test tokens for gas fees
+
+### 3. Create Your Student Profile
+- Fill in your details:
+  - Student ID
+  - Full Name
+  - Email
+  - Institution Name
+- Click "Create Profile"
+- Approve the transaction in Petra Wallet
+
+### 4. Verify for Educational Apps
+- Enter the name of the educational app you want to access
+- Click "Verify Identity"
+- Approve the transaction
+
+### 5. View Your Profile
+- Click "Load My Profile"
+- View your student information and all verified apps
+
+## 🌐 Deploying to Vercel
+
+### Method 1: Using Vercel CLI
+
+1. **Install Vercel CLI**:
+```bash
+npm install -g vercel
+```
+
+2. **Navigate to Frontend Directory**:
+```bash
+cd frontend
+```
+
+3. **Deploy**:
+```bash
+vercel
+```
+
+Follow the prompts:
+- Set up and deploy? `Yes`
+- Which scope? Select your account
+- Link to existing project? `No`
+- Project name? `student-identity-dapp` (or your preferred name)
+- In which directory is your code located? `./`
+- Want to override settings? `No`
+
+4. **Deploy to Production**:
+```bash
+vercel --prod
+```
+
+### Method 2: Using Vercel Dashboard
+
+1. **Prepare for Deployment**:
+   - Make sure all your changes are committed to Git
+   - Push to GitHub/GitLab/Bitbucket
+
+2. **Create `vercel.json`** in your `frontend` directory:
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install"
+}
+```
+
+3. **Deploy on Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Add New Project"
+   - Import your Git repository
+   - Configure project:
+     - **Framework Preset**: Vite
+     - **Root Directory**: `frontend`
+     - **Build Command**: `npm run build`
+     - **Output Directory**: `dist`
+   - Click "Deploy"
+
+4. **Your app will be live at**: `https://your-project-name.vercel.app`
+
+### Environment Variables (if needed)
+
+If you want to make the module address configurable:
+
+1. Create `.env` file in `frontend`:
+```env
+VITE_MODULE_ADDRESS=0x0d76dc3715a126a103d3bd6367362196c4d07e89465c82305c024b4afc4f2e2d
+```
+
+2. Update your components to use:
+```javascript
+const MODULE_ADDRESS = import.meta.env.VITE_MODULE_ADDRESS;
+```
+
+3. Add environment variable in Vercel:
+   - Go to Project Settings → Environment Variables
+   - Add `VITE_MODULE_ADDRESS` with your module address
+
+## 🔧 Configuration
+
+### Update Module Address
+
+If you redeploy the smart contract, update the `MODULE_ADDRESS` in:
+- `CreateProfile.jsx` (Line 9)
+- `VerifyApp.jsx` (Line 9)
+- `ViewProfile.jsx` (Line 9)
+
+### Change Network
+
+To switch from Devnet to Mainnet:
+1. Update `main.jsx`:
+```javascript
+dappConfig={{ network: Network.MAINNET }}
+```
+2. Update all component files:
+```javascript
+const config = new AptosConfig({ network: Network.MAINNET });
+```
+
+## 🐛 Troubleshooting
+
+### White Screen After Connecting Wallet
+- Make sure you're using the fixed `App.jsx` with `account?.address?.toString()`
+
+### "Profile Not Found" Error
+- Create a profile first using the "Create Student Profile" form
+- Make sure you're connected with the same wallet used to create the profile
+
+### Transaction Fails
+- Ensure you have enough APT in your wallet for gas fees
+- Verify you're on the correct network (Devnet)
+- Check that the MODULE_ADDRESS matches your deployed contract
+
+### Profile Won't Load
+- Verify the MODULE_ADDRESS is correct
+- Check browser console for error messages
+- Ensure the profile was created successfully
+
+## 📝 Smart Contract Functions
+
+### Entry Functions
+- `create_student_profile`: Creates a new student identity profile
+- `verify_for_app`: Adds an app to the verified apps list
+
+### View Functions
+- `get_student_id`: Retrieves student ID for an address
+- `profile_exists`: Checks if a profile exists for an address
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 
-## Contract Details
-0x8ae2a5afadc62a517674b3551aa18b96062a51a95d58a14a1f98fe9414a987aa
-=======
-# Decentralized Identity for Students – Login across apps
+## 👥 Support
 
-## Project Description
+For questions or issues:
+- Open an issue on GitHub
+- Check [Aptos Documentation](https://aptos.dev/)
+- Visit [Aptos Discord](https://discord.gg/aptoslabs)
 
-The Decentralized Identity for Students project is a blockchain-based smart contract solution built on the Aptos network that enables students to create and manage a unified digital identity. This identity can be used to authenticate and access multiple educational applications and platforms without the need for separate registration processes on each platform.
+## 🎯 Future Enhancements
 
-The smart contract provides a secure, decentralized way for students to store their academic credentials and identity information on-chain, while maintaining privacy and control over their personal data. Educational apps and platforms can verify student authenticity through this decentralized system, creating a seamless login experience across the entire educational ecosystem.
+- [ ] Add profile editing functionality
+- [ ] Implement profile deactivation
+- [ ] Add credential verification for institutions
+- [ ] Integration with OAuth providers
+- [ ] Mobile app version
+- [ ] Multi-signature support for institutional verification
+- [ ] IPFS integration for storing additional documents
 
-## Project Vision
+---
 
-Our vision is to revolutionize the way students interact with educational technology by creating a unified, secure, and student-controlled identity management system. We aim to eliminate the friction of multiple registrations, reduce identity fraud in educational settings, and empower students with complete ownership of their academic identity data.
-
-By leveraging blockchain technology, we envision a future where students can seamlessly access any educational platform, carry their verified credentials across institutions, and maintain a permanent, tamper-proof record of their academic journey that follows them throughout their educational career.
-
-## Key Features
-
-### 🔐 **Decentralized Identity Creation**
-- Students can create a unique on-chain identity profile with essential information
-- Secure storage of student ID, name, email, and institutional affiliation
-- Self-sovereign identity model where students own and control their data
-
-### 🎓 **Cross-Platform Verification**
-- Single identity can be verified across multiple educational applications
-- Streamlined app onboarding without repetitive registration processes
-- Maintains a record of all verified applications for transparency
-
-### 🛡️ **Security & Privacy**
-- Blockchain-based immutable identity records
-- Cryptographic verification prevents identity tampering
-- Students maintain full control over their identity data
-
-### ✅ **Institution Integration**
-- Links student identity to their educational institution
-- Enables institution-level verification and authentication
-- Supports academic credential validation
-
-### 📱 **Multi-App Ecosystem**
-- Designed for integration with various educational platforms
-- Scalable verification system for unlimited applications
-- Reduces development overhead for educational app creators
-
-## Future Scope
-
-### 🎯 **Enhanced Credential Management**
-- Integration with academic transcript systems
-- Support for digital diplomas and certificates
-- Verification of completed courses and achievements
-- Grade point average (GPA) and academic standing tracking
-
-### 🌐 **Cross-Institution Portability**
-- Transfer credits and credentials between institutions
-- Support for international student mobility
-- Recognition of online courses and MOOCs
-- Academic portfolio management across multiple institutions
-
-### 🤝 **Industry Integration**
-- Connection with employer verification systems
-- Integration with professional networking platforms
-- Support for internship and job application processes
-- Skills and competency verification for career development
-
-### 🔒 **Advanced Privacy Features**
-- Zero-knowledge proof implementations for selective disclosure
-- Granular permission controls for data sharing
-- Anonymous verification options for sensitive applications
-- GDPR and privacy regulation compliance tools
-
-### 📊 **Analytics & Insights**
-- Academic performance analytics across platforms
-- Learning pathway recommendations
-- Career guidance based on academic history
-- Institutional reporting and student success metrics
-
-### 🚀 **Technical Enhancements**
-- Mobile wallet integration for easier access
-- Biometric authentication options
-- Multi-signature support for institutional endorsements
-- Integration with existing identity providers (OAuth, SAML)
-- Support for NFT-based achievement badges and certificates
-
+Built with ❤️ on the Aptos Blockchain
 
 ## Contract Details
 0x8ae2a5afadc62a517674b3551aa18b96062a51a95d58a14a1f98fe9414a987aa
