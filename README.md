@@ -6,9 +6,9 @@ A blockchain-based decentralized identity system built on the Aptos blockchain t
 
 Cheak The Live App - [Vercel App Student Identity DApp ](https://decentralized-identity-for-students.vercel.app/)
 
-![alt text](Demo_Img\1.png) 
-![alt text](Demo_Img\2.png) 
-![alt text](Demo_Img\3.png)
+![alt text](Demo_Img/1.png) 
+![alt text](Demo_Img/2.png) 
+![alt text](Demo_Img/3.png)
 
 
 ## 📋 Description
