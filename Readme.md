@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Decentralized Identity for Students – Login across apps
 
 
@@ -304,5 +304,5 @@ Built with ❤️ on the Aptos Blockchain
 
 ## Contract Details
 0x8ae2a5afadc62a517674b3551aa18b96062a51a95d58a14a1f98fe9414a987aa
->>>>>>> 6c539eec1285cd37bb4cda5abebd21500cb0eb74
+6c539eec1285cd37bb4cda5abebd21500cb0eb74
 ![alt text](image.png)
